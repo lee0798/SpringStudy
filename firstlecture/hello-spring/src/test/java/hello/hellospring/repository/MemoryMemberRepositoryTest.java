@@ -13,10 +13,9 @@ class MemoryMemberRepositoryTest {
     @AfterEach
     public void afterEach(){
         repostiyory.clearStore();
-
     }
-     MemoryMemberRepository repostiyory = new MemoryMemberRepository();
-     @Test
+    MemoryMemberRepository repostiyory = new MemoryMemberRepository();
+    @Test
     public void save(){
          Member member = new Member();
          member.setName("도환");
