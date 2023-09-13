@@ -1,2 +1,2 @@
-# SpringStudy
+# SpringStudy practice code 
 
