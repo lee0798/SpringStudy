@@ -3,14 +3,17 @@ package hello.hellospring.service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+//@Service component어노테이션을 이용한 의존관계 설정 방법
 public class MemberService {//com+shift+t 누를시 테스트 파일 저절로 생성
     private final MemberRepository memberRepository;
 
     //construcctor 단축키 com+n
+    //@Autowired component어노테이션을 이용한 의존관계 설정 방법
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

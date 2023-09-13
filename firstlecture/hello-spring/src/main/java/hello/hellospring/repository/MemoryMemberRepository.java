@@ -1,8 +1,9 @@
 package hello.hellospring.repository;
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
-
+//@Repository component어노테이션을 이용한 의존관계 설정 방법
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();
