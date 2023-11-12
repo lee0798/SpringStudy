@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import static jakarta.persistence.FetchType.LAZY;
+
 @Entity
 @Getter @Setter
 public class Delivery {
@@ -11,7 +13,7 @@ public class Delivery {
     @GeneratedValue
     @Column(name = "delivery_id")
     private Long id;
-    @OneToOne(mappedBy = "delivery")
+    @OneToOne(mappedBy = "delivery", fetch = LAZY)//모든 xtoone관계는 지연로딩으로 설정
     private Order order;
 
     @Embedded
