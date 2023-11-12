@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Embeddable // 내장 타입을  포함할 수 있다.
 @Getter
-public class Address {
+public class Address {//
     private String city;
     private String street;
     private String zipcode;
