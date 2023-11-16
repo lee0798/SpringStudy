@@ -88,9 +88,7 @@ class OrderServiceTest {
         return book;
     }
 
-    private static int getStockQuantity() {
-        return 10;
-    }
+
 
     private Member creatMember() {
         Member member = new Member();
