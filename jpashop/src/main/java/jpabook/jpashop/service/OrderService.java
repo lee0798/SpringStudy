@@ -1,13 +1,11 @@
 package jpabook.jpashop.service;
 
-import jpabook.jpashop.Domain.Delivery;
-import jpabook.jpashop.Domain.Member;
-import jpabook.jpashop.Domain.Order;
-import jpabook.jpashop.Domain.OrderItem;
+import jpabook.jpashop.Domain.*;
 import jpabook.jpashop.Domain.item.Item;
 import jpabook.jpashop.reposittory.ItemRepository;
 import jpabook.jpashop.reposittory.MemberRepository;
 import jpabook.jpashop.reposittory.OrderRepository;
+import jpabook.jpashop.reposittory.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,6 +28,7 @@ public class OrderService {
         //배송 정보
         Delivery delivery = new Delivery();
         delivery.setAddress(member.getAddress());
+        delivery.setStatus(DeliveryStatus.READY);
         //주문 상품 생성
         OrderItem orderItem = OrderItem.createOrderItem(item, item.getPrice(), count);
 
@@ -51,7 +50,8 @@ public class OrderService {
     }
 
     //검색
-//    public List<Order> findOrders(OrderSearch orderSearch) {
-//        return orderRepository.findAll(orderSearch);
-//    }
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByString(orderSearch);
+    }
+
 }
